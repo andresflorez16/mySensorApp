@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">mySensorApp</string>
+    <string name="login">LOGIN</string>
+    <string name="ingreso">INGRESO</string>
+    <string name="email">Email</string>
+    <string name="contra">Contraseña</string>
 </resources>
