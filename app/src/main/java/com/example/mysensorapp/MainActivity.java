@@ -6,13 +6,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.j2objc.annotations.ObjectiveCName;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +25,6 @@ import java.util.UUID;
 public class MainActivity extends AppCompatActivity {
 
     FirebaseFirestore db;
-    DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,39 +37,130 @@ public class MainActivity extends AppCompatActivity {
     public void initialize() {
         FirebaseApp.initializeApp(this);
         db = FirebaseFirestore.getInstance();
-        Map<String, Object> user = new HashMap<>();
-        user.put("first", "Ada");
-        user.put("last", "Lovelace");
-        user.put("born", 1815);
-
-// Add a new document with a generated ID
-        db.collection("users")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        System.out.println("DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        System.out.println("error");
-                    }
-                });
-
     }
 
-    public void insertUser(String email, String name, String lastname, String phone) {
-        User user = new User();
-        user.setId(UUID.randomUUID().toString());
-        user.setEmail(email);
-        user.setName(name);
-        user.setLastname(lastname);
-        user.setPhone(phone);
+    public void insertUser(User myUser) {
+        HashMap<String, Object> user = new HashMap<>();
+        user.put("name", myUser.getName());
+        user.put("lastname", myUser.getLastname());
+        user.put("email", myUser.getEmail());
+        user.put("password", myUser.getPassword());
+        user.put("phone", myUser.getPhone());
 
-        myRef.child("users").child(user.getId()).setValue(user);
+        DocumentReference docRef = db.collection("users").document(myUser.getEmail());
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if(document.exists()) {
+                        System.out.println("exist");
+                    }else {
+                        db.collection("users").document(myUser.getEmail()).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                System.out.println("added");
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                System.out.println("not added" + e);
+                            }
+                        });
+                    }
+                }
+            }
+        });
+    }
 
+    public void consultUser(String email) {
+        DocumentReference usersRef = db.collection("users").document(email);
+        usersRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if(document.exists()) {
+                        System.out.println(document.getData());
+                    }else {
+                        System.out.println("No exists!");
+                    }
+                }
+            }
+        });
+    }
+
+    public void deleteUser(String email) {
+        DocumentReference usersRef = db.collection("users").document(email);
+        usersRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                System.out.println("Delete");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                System.out.println("not deleted" + e);
+            }
+        });
+    }
+
+    public void updateUser(User myUser, String previousEmail) {
+        HashMap<String, Object> user = new HashMap<>();
+        user.put("name", myUser.getName());
+        user.put("lastname", myUser.getLastname());
+        user.put("email", myUser.getEmail());
+        user.put("password", myUser.getPassword());
+        user.put("phone", myUser.getPhone());
+
+        if(myUser.getEmail().equals(previousEmail)) {
+            DocumentReference docRef = db.collection("users").document(previousEmail);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if(task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if(document.exists()) {
+                            db.collection("users").document(previousEmail).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    System.out.println("updated");
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    System.out.println("not updated" + e);
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+        }else {
+            deleteUser(previousEmail);
+            DocumentReference docRef = db.collection("users").document(myUser.getEmail());
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if(task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if(!document.exists()) {
+                            db.collection("users").document(myUser.getEmail()).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    System.out.println("updated");
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    System.out.println("not updated" + e);
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+        }
     }
 
 }
