@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         db = FirebaseFirestore.getInstance();
         Map<String, Object> user = new HashMap<>();
-        user.put("first", "Ada");
-        user.put("last", "Lovelace");
-        user.put("born", 1815);
+        user.put("first", "nikola");
+        user.put("last", "Tesla");
+        user.put("born", 1820);
 
 // Add a new document with a generated ID
         db.collection("users")
