@@ -34,39 +34,6 @@ public class MainActivity extends AppCompatActivity {
     public void initialize() {
         FirebaseApp.initializeApp(this);
         db = FirebaseFirestore.getInstance();
-        Map<String, Object> user = new HashMap<>();
-        user.put("first", "Ada");
-        user.put("last", "Lovelace");
-        user.put("born", 1815);
-
-// Add a new document with a generated ID
-        db.collection("users")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        System.out.println("DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        System.out.println("error");
-                    }
-                });
-
-    }
-
-    public void insertUser(String email, String name, String lastname, String phone) {
-        User user = new User();
-        user.setId(UUID.randomUUID().toString());
-        user.setEmail(email);
-        user.setName(name);
-        user.setLastname(lastname);
-        user.setPhone(phone);
-
-        myRef.child("users").child(user.getId()).setValue(user);
-
     }
 
 }
