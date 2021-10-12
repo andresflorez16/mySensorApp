@@ -163,4 +163,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void validationLogin(String email, String password) {
+        DocumentReference usersRef = db.collection("users").document(email);
+        usersRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if(document.exists()) {
+                        if(document.get("password").equals(password)) {
+                            System.out.println("WELCOME " + document.get("name"));
+                        }else {
+                            System.out.println("Incorrect password!");
+                        }
+                    }else {
+                        System.out.println("Verify your email");
+                    }
+                }
+            }
+        });
+    }
+
 }
