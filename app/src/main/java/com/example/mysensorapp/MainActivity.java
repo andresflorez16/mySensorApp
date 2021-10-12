@@ -3,6 +3,7 @@ package com.example.mysensorapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initialize();
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
 
     }
 
