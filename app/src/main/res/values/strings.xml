@@ -4,4 +4,9 @@
     <string name="ingreso">INGRESO</string>
     <string name="email">Email</string>
     <string name="contra">Contraseña</string>
+    <string name="registro">Registro</string>
+    <string name="name">Nombre</string>
+    <string name="secondname">Apellido</string>
+    <string name="phone">Teléfono</string>
+    <string name="ret">Volver</string>
 </resources>
