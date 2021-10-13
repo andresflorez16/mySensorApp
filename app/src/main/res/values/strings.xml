@@ -10,13 +10,27 @@
     <string name="phone">Teléfono</string>
     <string name="ret">Volver</string>
     <string name="panel_adm">Panel Administrador</string>
+    <string name="panel_tech">Panel Técnico</string>
+    <string name="panel_cli">Panel Cliente</string>
     <string name="modify_users">Modificar usuarios</string>
     <string name="modify_sensors">Modificar sensores</string>
+    <string name="create_sensors">Crear sensores</string>
     <string name="register">Registro</string>
     <string name="search">Buscar</string>
     <string name="modify">Modificar</string>
     <string name="delete">Eliminar</string>
     <string name="continu">Continuar</string>
+    <string name="title_activity_panelcliente">panelcliente</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
 
 
 </resources>
