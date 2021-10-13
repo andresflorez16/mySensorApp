@@ -9,10 +9,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="379dp"
+        android:layout_width="321dp"
         android:layout_height="342dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="104dp"
         android:adjustViewBounds="false"
         android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,11 +47,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="160dp"
-        android:layout_marginEnd="68dp"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
@@ -60,7 +59,7 @@
         android:layout_height="45dp"
         app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddress3"
         app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress3"
-        app:srcCompat="@mipmap/user" />
+        app:srcCompat="@mipmap/email" />
 
     <EditText
         android:id="@+id/editTextTextPassword3"
@@ -70,8 +69,7 @@
         android:ems="10"
         android:hint="@string/contra"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress3"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress3"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
@@ -114,13 +112,11 @@
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="68dp"
         android:ems="10"
         android:hint="@string/secondname"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        tools:layout_editor_absoluteY="212dp" />
 
     <ImageView
         android:id="@+id/imageView17"
@@ -135,11 +131,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="272dp"
-        android:layout_marginEnd="68dp"
         android:ems="10"
         android:hint="@string/phone"
         android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword3"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <Button
