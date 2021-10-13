@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_main.xml" value="0.21" />
-        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_crudusuarios.xml" value="0.25" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_panel.xml" value="0.18206521739130435" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_panelprincipal.xml" value="0.18206521739130435" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_register.xml" value="0.22" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/content_activity_panel.xml" value="0.18206521739130435" />
       </map>
     </option>
   </component>

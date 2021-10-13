@@ -33,9 +33,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initialize();
-        Intent intent = new Intent(this, RegisterActivity.class);
+        Intent intent = new Intent(this, crudusuarios.class);
         startActivity(intent);
-
     }
 
     public void initialize() {
@@ -176,7 +175,13 @@ public class MainActivity extends AppCompatActivity {
                     DocumentSnapshot document = task.getResult();
                     if(document.exists()) {
                         if(document.get("password").equals(password)) {
-                            System.out.println("WELCOME " + document.get("name"));
+                            if(document.get("type").equals("cliente")) {
+                                System.out.println("Cliente");
+                            }else if (document.get("type").equals("tecnico")) {
+                                System.out.println("Tecnico");
+                            }else {
+                                System.out.println("Admin");
+                            }
                         }else {
                             System.out.println("Incorrect password!");
                         }

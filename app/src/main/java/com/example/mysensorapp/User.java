@@ -21,17 +21,18 @@ import java.util.HashMap;
 
 public class User {
     private FirebaseFirestore db;
-    private String name, lastname, email, phone, password;
+    private String name, lastname, email, phone, password, type;
 
     public User() {
     }
 
-    public User(String name, String lastname, String email, String password, String phone) {
+    public User(String name, String lastname, String email, String password, String phone, String type) {
         this.name = name;
         this.lastname = lastname;
         this.email = email;
         this.phone = phone;
         this.password = password;
+        this.type = type;
     }
 
     public HashMap<String, Object> getUser(String name, String lastname, String email, String password, String phone) {
@@ -42,6 +43,14 @@ public class User {
         user.put("password", password);
         user.put("phone", phone);
         return user;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getPassword() {
