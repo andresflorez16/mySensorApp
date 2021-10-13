@@ -12,7 +12,7 @@
         android:layout_width="325dp"
         android:layout_height="436dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="56dp"
         android:adjustViewBounds="false"
         android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,46 +20,44 @@
         tools:srcCompat="@color/white" />
 
     <EditText
-        android:id="@+id/id_email_crud"
+        android:id="@+id/editTextTextEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="124dp"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/id_apellido_crud"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
         app:layout_constraintTop_toTopOf="@+id/imageView11" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="432dp"
+        android:id="@+id/button7"
+        android:layout_width="165dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="436dp"
+        android:layout_marginEnd="28dp"
         android:text="@string/ret"
         app:icon="@mipmap/ret"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        app:layout_constraintEnd_toStartOf="@+id/id_apellido_crud"
-        app:layout_constraintTop_toTopOf="@+id/id_apellido_crud"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName3"
         app:srcCompat="@mipmap/secondname" />
 
     <EditText
-        android:id="@+id/id_nombre_crud"
+        android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:ems="10"
         android:hint="@string/name"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView11"
         app:layout_constraintTop_toTopOf="@+id/imageView11" />
 
@@ -67,50 +65,48 @@
         android:id="@+id/imageView12"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        app:layout_constraintEnd_toStartOf="@+id/id_email_crud"
-        app:layout_constraintTop_toTopOf="@+id/id_email_crud"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress"
         app:srcCompat="@mipmap/email" />
 
     <ImageView
         android:id="@+id/imageView16"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        app:layout_constraintEnd_toStartOf="@+id/id_nombre_crud"
-        app:layout_constraintTop_toTopOf="@+id/id_nombre_crud"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName"
         app:srcCompat="@mipmap/name" />
 
     <EditText
-        android:id="@+id/id_phone_crud"
+        android:id="@+id/editTextPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:hint="@string/phone"
         android:inputType="phone"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/id_password_crud"
-        app:layout_constraintTop_toTopOf="@+id/imageView11" />
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintTop_toTopOf="@+id/spinner" />
 
     <ImageView
         android:id="@+id/imageView18"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        app:layout_constraintEnd_toStartOf="@+id/id_password_crud"
-        app:layout_constraintTop_toTopOf="@+id/id_password_crud"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPassword"
         app:srcCompat="@mipmap/key" />
 
     <EditText
-        android:id="@+id/id_password_crud"
+        android:id="@+id/editTextTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:hint="@string/contra"
         android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/id_email_crud"
-        app:layout_constraintStart_toStartOf="@+id/id_email_register"
-        app:layout_constraintTop_toTopOf="@+id/imageView11" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress3"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress" />
 
     <TextView
         android:id="@+id/textView3"
@@ -119,7 +115,7 @@
         android:layout_marginStart="104dp"
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="@string/crud"
+        android:text="@string/modify_users"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,11 +123,10 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="376dp"
-        android:layout_marginEnd="48dp"
-        android:onClick="btnContinuar"
+        android:layout_width="165dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="392dp"
+        android:layout_marginEnd="28dp"
         android:text="@string/continu"
         app:icon="@mipmap/user"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,60 +134,55 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/id_apellido_crud"
+        android:id="@+id/editTextTextPersonName3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="72dp"
         android:ems="10"
         android:hint="@string/secondname"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/id_nombre_crud"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
         app:layout_constraintTop_toTopOf="@+id/imageView11" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        app:layout_constraintEnd_toStartOf="@+id/id_phone_crud"
-        app:layout_constraintTop_toTopOf="@+id/id_phone_crud"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPhone"
+        app:layout_constraintTop_toTopOf="@+id/editTextPhone"
         app:srcCompat="@mipmap/phone" />
 
     <RadioGroup
-        android:layout_width="109dp"
-        android:layout_height="118dp"
-        android:layout_marginTop="316dp"
-        android:layout_marginEnd="192dp"
+        android:layout_width="106dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="336dp"
+        android:layout_marginEnd="188dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView11"
         app:layout_constraintTop_toTopOf="@+id/imageView11">
 
         <RadioButton
-            android:id="@+id/rButton_register"
+            android:id="@+id/radioButton"
             android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:text="@string/register"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:layout_height="24dp"
+            android:text="@string/register" />
 
         <RadioButton
-            android:id="@+id/rButtonFind"
+            android:id="@+id/radioButton4"
             android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:text="@string/search"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:layout_height="24dp"
+            android:text="@string/search" />
 
         <RadioButton
-            android:id="@+id/rButtonModify"
+            android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:text="@string/modify"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:layout_height="24dp"
+            android:text="@string/modify" />
 
         <RadioButton
-            android:id="@+id/rButtonDelete"
+            android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:text="@string/delete"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:layout_height="24dp"
+            android:text="@string/delete" />
     </RadioGroup>
 
     <ImageView
@@ -204,5 +194,21 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView11"
         app:layout_constraintEnd_toEndOf="@+id/imageView11"
         app:srcCompat="@mipmap/crud" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toTopOf="@+id/spinner"
+        app:srcCompat="@mipmap/usertype" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

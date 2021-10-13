@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_activity_panel">
+    tools:showIn="@layout/app_bar_panelcliente">
 
     <fragment
-        android:id="@+id/nav_host_fragment_content_activity_panel"
+        android:id="@+id/nav_host_fragment_content_panelcliente"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
