@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_contact"
         android:name="com.example.mysensorapp.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_contact"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_about"
         android:name="com.example.mysensorapp.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_about"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>
