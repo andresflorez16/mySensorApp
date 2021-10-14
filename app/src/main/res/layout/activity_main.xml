@@ -4,49 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_700"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="282dp"
-        android:layout_height="157dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="132dp"
-        android:adjustViewBounds="false"
-        android:background="@color/white"
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="246dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="392dp"
+        android:text="¿No tiene usuario?, por favor registrese"
+        android:textColor="#96000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@color/white" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        app:layout_constraintEnd_toStartOf="@+id/id_email_login"
-        app:layout_constraintTop_toTopOf="@+id/id_email_login"
-        app:srcCompat="@mipmap/user" />
-
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="108dp"
-        android:layout_marginBottom="128dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:srcCompat="@mipmap/user1" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        app:layout_constraintEnd_toStartOf="@+id/id_password_login"
-        app:layout_constraintTop_toTopOf="@+id/id_password_login"
-        app:srcCompat="@mipmap/key" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button9"
         android:layout_width="109dp"
         android:layout_height="51dp"
         android:layout_marginTop="336dp"
@@ -58,43 +30,57 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="36dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="@string/ingreso"
-        android:textColor="@color/white"
-        android:textSize="30sp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="428dp"
+        android:text="@string/registro"
+        app:icon="@mipmap/adduser"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/id_email_login"
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="156dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/app_name"
+        android:textColor="@color/teal_700"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="325dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="92dp"
+        android:text="my Sensor App es una aplicación que permite visualizar  los datos y registros de sensores de calidad de aire Clarity y Modulair PM"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9" />
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="172dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/clarity" />
 
-    <EditText
-        android:id="@+id/id_password_login"
+    <ImageView
+        android:id="@+id/imageView28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:hint="@string/contra"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9" />
-
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="172dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/modulairpm" />
 </androidx.constraintlayout.widget.ConstraintLayout>
