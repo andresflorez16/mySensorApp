@@ -12,6 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySensorApp">
         <activity
+            android:name=".MainActivity"
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+        </activity>
+
+        <activity
             android:name=".modulairsensor"
             android:exported="true" />
         <activity
@@ -21,9 +32,7 @@
             android:name=".panelcliente"
             android:exported="true"
             android:label="@string/title_activity_panelcliente"
-            android:theme="@style/Theme.MySensorApp.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.MySensorApp.NoActionBar"></activity>
         <activity
             android:name=".paneltecnico"
             android:exported="true" />
@@ -37,13 +46,8 @@
             android:name=".paneladmin"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            android:name=".login"
+            android:exported="true">
         </activity>
     </application>
 
