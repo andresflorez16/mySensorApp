@@ -1,5 +1,6 @@
 package com.example.mysensorapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -59,6 +60,8 @@ public class panelcliente extends AppCompatActivity {
     }
 
     public boolean onMenuItemClickMethod(MenuItem menuItem) {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
             Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
             return true;
     }

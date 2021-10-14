@@ -52,6 +52,7 @@
         android:layout_marginTop="336dp"
         android:layout_marginEnd="124dp"
         android:backgroundTint="@color/purple_500"
+        android:onClick="login"
         android:text="@string/login"
         app:icon="@mipmap/login"
         app:layout_constraintEnd_toEndOf="parent"

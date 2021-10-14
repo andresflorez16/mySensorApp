@@ -37,6 +37,7 @@
         android:layout_height="37dp"
         android:layout_marginTop="436dp"
         android:layout_marginEnd="28dp"
+        android:onClick="back"
         android:text="@string/ret"
         app:icon="@mipmap/ret"
         app:layout_constraintEnd_toEndOf="parent"
