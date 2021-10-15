@@ -4,18 +4,24 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_crudusuarios.xml" value="0.25" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_modulairsensor.xml" value="0.22" />
         <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_panel.xml" value="0.18206521739130435" />
         <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_paneladmin.xml" value="0.25" />
-        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_panelcliente.xml" value="0.25" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_panelcliente.xml" value="0.33" />
         <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_panelprincipal.xml" value="0.18206521739130435" />
-        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_paneltecnico.xml" value="0.18614130434782608" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_paneltecnico.xml" value="0.33" />
         <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/app_bar_panelcliente.xml" value="0.18206521739130435" />
         <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/content_activity_panel.xml" value="0.18206521739130435" />
         <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/content_panelcliente.xml" value="0.18206521739130435" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/fragment_gallery.xml" value="0.5" />
         <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/fragment_home.xml" value="0.18614130434782608" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.192481884057971" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/layout/nav_header_panelcliente.xml" value="0.25" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.67" />
+        <entry key="..\:/Coding/Clases APP/mySensorApp/app/src/main/res/menu/panelcliente.xml" value="0.22447916666666667" />
       </map>
     </option>
   </component>

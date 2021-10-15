@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
         android:layout_marginTop="444dp"
+        android:onClick="backToMainT"
         android:text="@string/ret"
         app:icon="@mipmap/ret"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
+        android:onClick="toClient"
         app:layout_constraintEnd_toEndOf="@+id/imageView20"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
         app:srcCompat="@mipmap/userpan" />
@@ -87,7 +89,7 @@
         app:srcCompat="@mipmap/addsensor" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/id_nombre_tecnico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

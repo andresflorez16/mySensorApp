@@ -31,6 +31,8 @@ public class crudusuarios extends AppCompatActivity {
     private RadioButton rbtnRegister, rbtnFind, rbtnDelete, rbtnModify, radioButton;
     private RadioGroup rGroup;
     private Spinner typeUsers;
+    Intent i;
+    String nombre, email, tipo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +55,10 @@ public class crudusuarios extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapterType = ArrayAdapter.createFromResource(this, R.array.typeUsers, android.R.layout.simple_spinner_item);
         typeUsers.setAdapter(adapterType);
 
+        i = getIntent();
+        nombre = i.getStringExtra("nombre");
+        email = i.getStringExtra("email");
+        tipo = i.getStringExtra("tipo");
 
         initialize();
 
@@ -225,6 +231,9 @@ public class crudusuarios extends AppCompatActivity {
 
     public void back(View view) {
         Intent intent = new Intent(this, paneladmin.class);
+        intent.putExtra("nombre",nombre );
+        intent.putExtra("email", email);
+        intent.putExtra("tipo", tipo);
         startActivity(intent);
     }
 

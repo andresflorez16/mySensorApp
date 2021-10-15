@@ -1,8 +1,14 @@
 package com.example.mysensorapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -10,6 +16,11 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -18,23 +29,70 @@ import java.util.HashMap;
 
 public class login extends AppCompatActivity {
 
+    DatabaseReference database;
     FirebaseFirestore db;
+    private EditText email, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        initialize();
+        email = (EditText) findViewById(R.id.id_email_login);
+        password = (EditText) findViewById(R.id.id_password_login);
 
     }
-
     public void initialize() {
         FirebaseApp.initializeApp(this);
         db = FirebaseFirestore.getInstance();
     }
 
-    public void insertUser(User myUser) {
+    public void testing(View view) {
+        database = FirebaseDatabase.getInstance().getReference();
+        /*database.child("sensors").child("modulairPm").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if(task.isSuccessful()) {
+                    DataSnapshot data = task.getResult();
+                    if(data.exists()) {
+                        for(DataSnapshot ds : data.getChildren()){
+                            System.out.println(ds.child("city").getValue().toString());
+                        }
+                    }
+                }
+            }
+        });*/
+        database.child("sensors").child("modulairPm").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                System.out.println(snapshot);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+        });
+    }
+
+    public void insertUser(View view, User myUser) {
         HashMap<String, Object> user = new HashMap<>();
         user.put("name", myUser.getName());
         user.put("lastname", myUser.getLastname());
@@ -158,6 +216,14 @@ public class login extends AppCompatActivity {
         }
     }
 
+    public void login(View view) {
+        if(email.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Los campos son obligatorios", Toast.LENGTH_SHORT).show();
+        }else {
+            validationLogin(email.getText().toString(), password.getText().toString());
+        }
+    }
+
     public void validationLogin(String email, String password) {
         DocumentReference usersRef = db.collection("users").document(email);
         usersRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -167,13 +233,37 @@ public class login extends AppCompatActivity {
                     DocumentSnapshot document = task.getResult();
                     if(document.exists()) {
                         if(document.get("password").equals(password)) {
-                            System.out.println("WELCOME " + document.get("name"));
+                            System.out.println(document.getData());
+                            if(document.get("type").equals("cliente")) {
+                                Toast.makeText(getApplicationContext(), "Bienvenido " + document.get("name").toString(), Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), panelcliente.class);
+                                intent.putExtra("nombre", document.get("name").toString());
+                                intent.putExtra("email", email);
+                                intent.putExtra("tipo", "cliente");
+                                startActivity(intent);
+                            }else if (document.get("type").equals("tecnico")) {
+                                Toast.makeText(getApplicationContext(), "Bienvenido " + document.get("name").toString(), Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), paneltecnico.class);
+                                intent.putExtra("nombre", document.get("name").toString());
+                                intent.putExtra("email", email);
+                                intent.putExtra("tipo", "tecnico");
+                                startActivity(intent);
+                            }else {
+                                Toast.makeText(getApplicationContext(), "Bienvenido Admin!", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), paneladmin.class);
+                                intent.putExtra("nombre", document.get("name").toString());
+                                intent.putExtra("email", email);
+                                intent.putExtra("tipo", document.get("type").toString());
+                                startActivity(intent);
+                            }
                         }else {
-                            System.out.println("Incorrect password!");
+                            Toast.makeText(getApplicationContext(), "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
                         }
                     }else {
-                        System.out.println("Verify your email");
+                        Toast.makeText(getApplicationContext(), "Verifique su email", Toast.LENGTH_SHORT).show();
                     }
+                }else {
+                    Toast.makeText(getApplicationContext(), "Ocurrió un error!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

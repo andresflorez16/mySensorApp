@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -65,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
         user.put("email", myUser.getEmail());
         user.put("password", myUser.getPassword());
         user.put("phone", myUser.getPhone());
-        user.put("cliente", myUser.getType());
+        user.put("type", myUser.getType());
 
         DocumentReference docRef = db.collection("users").document(myUser.getEmail());
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -74,15 +75,18 @@ public class RegisterActivity extends AppCompatActivity {
                 if(task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if(document.exists()) {
-                        System.out.println("exist");
                         Toast.makeText(getApplicationContext(), "El email ya está registrado", Toast.LENGTH_SHORT).show();
                     }else {
                         db.collection("users").document(myUser.getEmail()).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                System.out.println("added");
                                 Toast.makeText(getApplicationContext(), "Usuario añadido", Toast.LENGTH_SHORT).show();
                                 Clear(view);
+                                Intent intent = new Intent(getApplicationContext(), panelcliente.class);
+                                intent.putExtra("nombre", myUser.getName());
+                                intent.putExtra("email", myUser.getEmail());
+                                intent.putExtra("tipo", "cliente");
+                                startActivity(intent);
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -103,5 +107,10 @@ public class RegisterActivity extends AppCompatActivity {
         emailText.setText("");
         passwordText.setText("");
         phoneText.setText("");
+    }
+
+    public void backToMain(View view) {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 }
