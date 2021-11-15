@@ -18,7 +18,7 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
     View vista;
-    ImageButton btnClarity, btnModulair;
+    ImageButton btnClarity, btnModulair, btnMhz;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class HomeFragment extends Fragment {
         
         btnClarity = (ImageButton) vista.findViewById(R.id.id_buttonClarity);
         btnModulair = (ImageButton) vista.findViewById(R.id.id_buttonModulair);
+        btnMhz = (ImageButton) vista.findViewById(R.id.id_buttonMhz);
 
         btnClarity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +43,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), com.example.mysensorapp.modulairsensor.class);
+                startActivity(i);
+            }
+        });
+        btnMhz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), com.example.mysensorapp.mhzsensor.class);
                 startActivity(i);
             }
         });

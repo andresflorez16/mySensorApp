@@ -10,43 +10,151 @@
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/modulair"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/webView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
-        android:layout_width="358dp"
-        android:layout_height="218dp"
-        android:layout_marginTop="280dp"
-        app:layout_constraintEnd_toEndOf="@+id/webView"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+        <TableRow android:background="#0079D6" android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:text="Información" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:text="Valor" />
+        </TableRow>
+        <TableRow android:background="#DAE8FC" android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Temperature" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/id_temperature_modul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+        <TableRow android:background="#DAE8FC" android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Humedad" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/id_rh_modul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        </TableRow>
+        <TableRow android:background="#DAE8FC" android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="PM1" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/id_pm1_modul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+        <TableRow android:background="#DAE8FC" android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="PM10" />
+
+            <TextView
+                android:id="@+id/id_pm10_modul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+        <TableRow android:background="#DAE8FC" android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="PM25" />
+
+            <TextView
+                android:id="@+id/id_pm25_modul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+        <TableRow android:background="#DAE8FC" android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fecha" />
+
+            <TextView
+                android:id="@+id/id_date_modul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+        <TableRow android:background="#DAE8FC" android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hora" />
+
+            <TextView
+                android:id="@+id/id_hour_modul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+        <TableRow android:background="#DAE8FC" android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Modelo" />
+
+            <TextView
+                android:id="@+id/id_model_modul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
     </TableLayout>
 
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="358dp"
-        android:layout_height="248dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,12 +38,13 @@
         android:id="@+id/idmac2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="192dp"
         android:layout_marginEnd="40dp"
         android:ems="10"
-        android:hint="@string/mac"
+        android:hint="MAC del sensor"
         android:inputType="text"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="@string/modify_sensor"
+        android:text="Mi sensor"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,9 +68,11 @@
         android:id="@+id/imageView34"
         android:layout_width="85dp"
         android:layout_height="90dp"
-        app:srcCompat="@mipmap/addsensor"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="56dp" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView34"
+        app:srcCompat="@mipmap/addsensor" />
 
     <ImageView
         android:id="@+id/imageView35"
@@ -97,13 +100,14 @@
     <Spinner
         android:id="@+id/spinner3"
         android:layout_width="205dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.501" />
+        app:layout_constraintVertical_bias="0.501"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/button11"
@@ -120,8 +124,8 @@
     <RadioGroup
         android:layout_width="100dp"
         android:layout_height="102dp"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="300dp">
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="362dp">
 
         <RadioButton
             android:id="@+id/radioButton9"

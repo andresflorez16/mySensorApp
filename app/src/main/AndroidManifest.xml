@@ -29,6 +29,9 @@
             android:name=".claritysensor"
             android:exported="true" />
         <activity
+            android:name=".mhzsensor"
+            android:exported="true" />
+        <activity
             android:name=".panelcliente"
             android:exported="true"
             android:label="@string/title_activity_panelcliente"
