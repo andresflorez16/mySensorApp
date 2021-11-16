@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class paneladmin extends AppCompatActivity {
     String name, email, type;
@@ -24,6 +25,12 @@ public class paneladmin extends AppCompatActivity {
 
     }
 
+    public void backAdmin(View view) {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
+    }
+    
     public void crudSensors(View view) {
         Intent intent = new Intent(this, modifysensor.class);
         intent.putExtra("nombre", name);

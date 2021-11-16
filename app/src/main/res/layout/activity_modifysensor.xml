@@ -127,8 +127,10 @@
         android:id="@+id/radioGroup2"
         android:layout_width="100dp"
         android:layout_height="102dp"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="362dp">
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView33"
+        app:layout_constraintTop_toBottomOf="@+id/spinner3">
 
         <RadioButton
             android:id="@+id/radioButton9"
