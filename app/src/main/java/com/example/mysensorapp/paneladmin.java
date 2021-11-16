@@ -24,6 +24,14 @@ public class paneladmin extends AppCompatActivity {
 
     }
 
+    public void crudSensors(View view) {
+        Intent intent = new Intent(this, modifysensor.class);
+        intent.putExtra("nombre", name);
+        intent.putExtra("email", email);
+        intent.putExtra("tipo", type);
+        startActivity(intent);
+    }
+
     public void crudUsers(View view) {
         Intent intent = new Intent(this, crudusuarios.class);
         intent.putExtra("nombre", name);

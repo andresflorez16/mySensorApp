@@ -33,6 +33,14 @@ public class paneltecnico extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void addSensor(View view) {
+        Intent i = new Intent(this, registersensor.class);
+        i.putExtra("nombre",nombre );
+        i.putExtra("email", email);
+        i.putExtra("tipo", tipo);
+        startActivity(i);
+    }
+
     public void backToMainT(View view) {
         if(tipo.equals("tecnico")) {
             Intent i = new Intent(this, MainActivity.class);
@@ -42,7 +50,7 @@ public class paneltecnico extends AppCompatActivity {
             Intent i = new Intent(this, paneladmin.class);
             i.putExtra("nombre",nombre );
             i.putExtra("email", email);
-            i.putExtra("nombre", tipo);
+            i.putExtra("tipo", tipo);
             startActivity(i);
         }
     }

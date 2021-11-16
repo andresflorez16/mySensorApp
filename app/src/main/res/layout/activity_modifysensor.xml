@@ -25,14 +25,15 @@
         android:id="@+id/button13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="backSensor"
         android:text="@string/ret"
         app:icon="@mipmap/ret"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="0.837"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.751" />
+        app:layout_constraintVertical_bias="0.749" />
 
     <EditText
         android:id="@+id/idmac2"
@@ -103,16 +104,17 @@
         android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.501"
+        app:layout_constraintVertical_bias="0.497"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/button11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="btnCrud"
         android:text="@string/continu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,6 +124,7 @@
         app:layout_constraintVertical_bias="0.647" />
 
     <RadioGroup
+        android:id="@+id/radioGroup2"
         android:layout_width="100dp"
         android:layout_height="102dp"
         tools:layout_editor_absoluteX="47dp"
@@ -131,6 +134,7 @@
             android:id="@+id/radioButton9"
             android:layout_width="wrap_content"
             android:layout_height="24dp"
+            android:checked="true"
             android:text="@string/register" />
 
         <RadioButton

@@ -4,4 +4,9 @@
         <item>cliente</item>
         <item>tecnico</item>
     </string-array>
+    <string-array name="typeSensors">
+        <item>MHZ19C</item>
+        <item>PLANTOWER</item>
+    </string-array>
+
 </resources>
